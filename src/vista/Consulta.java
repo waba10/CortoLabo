@@ -248,7 +248,7 @@ public class Consulta extends JFrame{
                 if(f==null){
                     JOptionPane.showMessageDialog(null, "no se encontro el producto ");
                 }else{
-                    Integer.parseInt(codigo.getText());
+                    codigo.getText();
                     Double.parseDouble(precio.getText());
                     nombre.getText();
                     Integer.parseInt(cantidad.getText());

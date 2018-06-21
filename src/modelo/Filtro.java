@@ -67,6 +67,10 @@ public class Filtro {
         this.disponibilidad = disponibilidad;
         this.tipo = tipo;
     }
+
+    public Filtro(String codigo) {
+        this.codigo = codigo;
+    }
     
 
     public String getCodigo() {

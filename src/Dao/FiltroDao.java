@@ -101,7 +101,7 @@ public class FiltroDao implements metodos<Filtro>{
             ps.setString(1, key.toString());
             rs = ps.executeQuery();
             while(rs.next()){
-                f = new Filtro(rs.getString(1),rs.getString(2),rs.getString(3),rs.getInt(4),rs.getDouble(5),rs.getBoolean(6));
+                f = new Filtro(rs.getString(2),rs.getString(3),rs.getString(4),rs.getInt(5),rs.getDouble(6),rs.getBoolean(7));
             }
             rs.close();
         }catch(SQLException ex){
