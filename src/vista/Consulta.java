@@ -226,19 +226,7 @@ public class Consulta extends JFrame{
         }   
     });
         
-        eliminar.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e){
-                FiltroDao fd = new FiltroDao();
-                if(fd.delete(codigo.getText())){
-                    JOptionPane.showMessageDialog(null, "Producto eliminado");
-                    limpiarCampos();
-                    llenarTabla();
-                }else{
-                    JOptionPane.showMessageDialog(null, "Ocurrio problema ");
-                }
-            }
-        });
+        
         
         buscar.addActionListener(new ActionListener(){
             @Override
@@ -248,11 +236,18 @@ public class Consulta extends JFrame{
                 if(f==null){
                     JOptionPane.showMessageDialog(null, "no se encontro el producto ");
                 }else{
-                    codigo.getText();
-                    Double.parseDouble(precio.getText());
-                    nombre.getText();
-                    Integer.parseInt(cantidad.getText());
-                    tipo.getSelectedItem().toString();
+                    
+                    codigo.setText(f.getCodigo());
+                    nombre.setText(f.getNombre());
+                    precio. setText(String.valueOf(f.getPrecio()));
+                    cantidad.setText(String.valueOf(f.getCantidad()));
+                    tipo.setSelectedItem(f.getTipo());
+                    
+                    //...
+                    //Double.parseDouble(precio.getText());
+                    //nombre.getText();
+                    //Integer.parseInt(cantidad.getText());
+                   // tipo.getSelectedItem().toString();
                    
                     
                     if(f.isDisponibilidad()){
